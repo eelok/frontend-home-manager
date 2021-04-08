@@ -6,9 +6,7 @@ function App() {
     return (
         <div className="App">
             <Switch>
-                <Route path="/electricity" component={CounterComponent}/>
-                <Route path="/cold-water"/>
-                <Route path="/hot-water"/>
+                <Route path="/:type" component={CounterComponent}/>
             </Switch>
 
         </div>
