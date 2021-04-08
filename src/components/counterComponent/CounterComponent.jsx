@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {URL} from "../../constants/url";
 import moment from "moment";
+import InputComponent from '../FormInput/InputComponent';
 
-const FormInput = () => {
+const CounterComponent = () => {
 
     const [counter, setCounter] = useState();
 
@@ -28,21 +29,18 @@ const FormInput = () => {
 
     return (
         <form onSubmit={handleSubmitForm}>
-            <label htmlFor="electricity">Electricity: </label>
-            <input
-                type="text"
-                name="electricity"
-                id="electricity"
+            <InputComponent
+                labelName={"electricity"}
+                inputType={"text"}
+                id={"electricity"}
+                required={true}
                 placeholder={"0000,00"}
                 defaultValue={counter}
-                required={true}
                 onChange={handleInputChange}
             />
-            <button type="submit">Save
-            </button>
+            <button type="submit">Save</button>
         </form>
-
     );
 }
 
-export default FormInput;
+export default CounterComponent;
