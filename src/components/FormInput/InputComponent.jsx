@@ -6,7 +6,7 @@ const InputComponent = ({labelName, inputType, id, required, placeholder, defaul
             <label htmlFor={id}>{labelName}</label>
             <input
                 type={inputType}
-                name={id + "huy sobachiy"}
+                name={id}
                 id={id}
                 required={required}
                 defaultValue={defaultValue}
