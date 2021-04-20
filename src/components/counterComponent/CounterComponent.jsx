@@ -5,7 +5,7 @@ import InputComponent from '../FormInput/InputComponent';
 
 
 const CounterComponent = (props) => {
-    const type = props.match.params.type.toUpperCase();
+    const type = props.match.params.type;
     const [counter, setCounter] = useState(0);
 
     const handleInputChange = (event) => {
@@ -16,7 +16,7 @@ const CounterComponent = (props) => {
         event.preventDefault();
 
         let timestamp = moment().format("DD-MM-yyyy HH:mm:ss");
-
+        debugger;
         fetch(`${URL}/counter-data`, {
             method: "POST",
             headers: {"Content-type": "application/json"},
@@ -26,6 +26,7 @@ const CounterComponent = (props) => {
                 "timestamp": timestamp
             })
         }).catch(err => console.log(err));
+        setCounter(0);
     }
 
     return (
