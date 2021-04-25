@@ -16,13 +16,14 @@ const CounterComponent = (props) => {
         event.preventDefault();
 
         let timestamp = moment().format("DD-MM-yyyy HH:mm:ss");
-        debugger;
+        let counterWithPont = counter.replace(",", ".");
+
         fetch(`${URL}/counter-data`, {
             method: "POST",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({
                 "type": type,
-                "value": counter,
+                "value": counterWithPont,
                 "timestamp": timestamp
             })
         }).catch(err => console.log(err));
@@ -31,7 +32,6 @@ const CounterComponent = (props) => {
 
     return (
         <form onSubmit={handleSubmitForm}>
-
             <InputComponent
                 labelName={type}
                 inputType={"text"}
