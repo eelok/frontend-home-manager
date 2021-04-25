@@ -32,7 +32,6 @@ const CounterComponent = (props) => {
 
     return (
         <form onSubmit={handleSubmitForm}>
-
             <InputComponent
                 labelName={type}
                 inputType={"text"}
