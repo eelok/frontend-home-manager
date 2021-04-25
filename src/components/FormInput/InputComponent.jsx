@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputComponent = ({labelName, inputType, id, required, placeholder, defaultValue, onChange}) => {
+const InputComponent = ({labelName, inputType, id, required, placeholder, value, onChange}) => {
     return (
         <>
             <label htmlFor={id}>{labelName}</label>
@@ -9,7 +9,7 @@ const InputComponent = ({labelName, inputType, id, required, placeholder, defaul
                 name={id}
                 id={id}
                 required={required}
-                defaultValue={defaultValue}
+                value={value}
                 placeholder={placeholder}
                 onChange={onChange}
             />
